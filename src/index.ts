@@ -1,10 +1,6 @@
 import "svelte";
-import ExecutionPage from "./svelte/Page.svelte";
+import IndexPage from "./page/IndexPage.svelte";
 
-new ExecutionPage({
-  target: document.body,
-
-  props: {
-    propsString: "Hello! Wolrd!",
-  },
+new IndexPage({
+  target: document.body
 });

@@ -35,6 +35,9 @@ module.exports = {
   resolve: {
     modules: [path.join(__dirname, "src"), "node_modules"], // 모듈 위치
     extensions: [".ts", ".js"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
