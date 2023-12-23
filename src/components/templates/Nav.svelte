@@ -1,12 +1,15 @@
 <script lang="ts">
 </script>
 
-<div class="nav">
-</div>
+<nav class="nav">
+</nav>
 
 <style>
     .nav {
+        height: 6vh;
+
         background-color: black;
-        height: 4vh;
+
+        z-index: 1;
     }
 </style>

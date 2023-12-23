@@ -42,7 +42,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html", // 템플릿 위치
-      favicon: "./src/favicon.ico",
+      favicon: "./src/assets/favicon.ico",
     }),
   ],
   devServer: {
