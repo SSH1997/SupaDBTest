@@ -2,6 +2,7 @@
 </script>
 
 <footer class="footer">
+    <p>footer</p>
 </footer>
 
 <style>
@@ -15,5 +16,12 @@
         background-color: gray;
 
         z-index: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 1vh;
+        box-sizing: border-box;
     }
 </style>
