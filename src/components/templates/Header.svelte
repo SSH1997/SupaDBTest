@@ -1,11 +1,12 @@
 <script lang="ts">
     import MenuButton from "@/components/molecules/HeaderMenuButton.svelte";
 
+    export let toggleNav: () => void;
 </script>
 
 <header class="header">
     <p>Header</p>
-    <MenuButton />
+    <MenuButton {toggleNav} />
 </header>
 
 <style>

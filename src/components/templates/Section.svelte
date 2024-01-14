@@ -17,7 +17,7 @@
         
         z-index: 0;
         
-        padding-top: 6vh;
+        padding: 6vh 1vh 1vh 1vh;
         box-sizing: border-box;
     }
 </style>
