@@ -1,8 +1,12 @@
 <script lang="ts">
+    import NavButtons from "@/components/molecules/NavButtons.svelte";
+    import type { SectionContent } from "@/utils/types";
+
+    export let setSectionContent: (sectionContent: SectionContent) => void;
 </script>
 
 <nav class="nav">
-    <p>nav</p>
+    <NavButtons {setSectionContent} />
 </nav>
 
 <style>

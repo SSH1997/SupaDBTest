@@ -1,8 +1,11 @@
 <script lang="ts">
+  import type { SectionContent } from "@/utils/types";
+
+    export let currentSectionContent: SectionContent;
 </script>
 
 <section class="section">
-    <p>section</p>
+    <p>{currentSectionContent == null ? "" : currentSectionContent}</p>
 </section>
 
 <style>

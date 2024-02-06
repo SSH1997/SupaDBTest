@@ -5,7 +5,7 @@
 </script>
 
 <button on:click={onClick} class="atom_button">
-    <img class="atom_button_image" src="{imgSrc}" alt="{buttonText}">
+    <img class="atom_button_image" src="{imgSrc}" alt="">
     {buttonText}
 </button>
 
