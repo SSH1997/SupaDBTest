@@ -1,7 +1,21 @@
 <script lang="ts">
-  import type { SectionContent } from "@/utils/types";
+    import { afterUpdate } from "svelte";
+    import { createClient } from "@supabase/supabase-js";
+    import type { SectionContent } from "@/utils/types";
+    import { supabaseUrl, supabaseKey } from "@/utils/dbAuth";
 
     export let currentSectionContent: SectionContent;
+
+    const conn = createClient(supabaseUrl, supabaseKey);
+    
+    afterUpdate(async () => {
+        const { data, error } = await conn
+        .from("TESTDB")
+        .select();
+
+        if (error) throw error;
+        console.log(data);
+    });
 </script>
 
 <section class="section">

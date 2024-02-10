@@ -13,8 +13,6 @@
     };
 
     const setSectionContent = (sectionContent: SectionContent) => {
-        console.log(currentSectionContent);
-        console.log(sectionContent);
         currentSectionContent = sectionContent;
     }
 
