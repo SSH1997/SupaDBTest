@@ -3,18 +3,14 @@
     import { SectionContent } from "@/utils/types";
 
     export let setSectionContent: (sectionContent: SectionContent) => void;
-
-    const sectionContentList =
-        Object.values(SectionContent)
-        .filter(it => typeof it === "string") as SectionContent[];
 </script>
 
 <div class="nav_buttons_outer_div">
-    {#each sectionContentList as sectionContent}
-        <div class="nav_buttons_inner_div">
-            <Button buttonText={sectionContent.toString()} onClick={() => setSectionContent(sectionContent)} />
-        </div>
-    {/each}
+    <div class="nav_buttons_inner_div">
+        <Button buttonText={SectionContent[SectionContent.a]} onClick={() => setSectionContent(SectionContent.a)} />
+        <Button buttonText={SectionContent[SectionContent.b]} onClick={() => setSectionContent(SectionContent.b)} />
+        <Button buttonText={SectionContent[SectionContent.c]} onClick={() => setSectionContent(SectionContent.c)} />
+    </div>
 </div>
 
 <style>

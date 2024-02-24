@@ -3,3 +3,7 @@ export enum SectionContent {
   b,
   c,
 }
+
+export type Day = {
+  content: string[];
+};

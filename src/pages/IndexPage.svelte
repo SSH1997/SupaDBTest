@@ -14,6 +14,7 @@
 
     const setSectionContent = (sectionContent: SectionContent) => {
         currentSectionContent = sectionContent;
+        isNavVisible = false;
     }
 
 </script>
