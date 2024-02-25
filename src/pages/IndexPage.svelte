@@ -6,7 +6,7 @@
     import { SectionContent } from "@/utils/types";
 
     let isNavVisible: boolean = false;
-    let currentSectionContent: SectionContent;
+    let currentSectionContent: SectionContent = SectionContent.a;
 
     const toggleNav = () => {
         isNavVisible = !isNavVisible;
