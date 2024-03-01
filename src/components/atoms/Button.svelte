@@ -5,7 +5,9 @@
 </script>
 
 <button on:click={onClick} class="atom_button">
+    {#if imgSrc != ""}
     <img class="atom_button_image" src="{imgSrc}" alt="">
+    {/if}
     {buttonText}
 </button>
 
@@ -15,6 +17,12 @@
         height: 100%;
         padding: 0;
         border: none;
+
+        font-size: 4vh;
+        color: black;
+
+        display: flex;
+        justify-content: center;
     }
 
     .atom_button_image {

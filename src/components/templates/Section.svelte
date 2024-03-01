@@ -7,13 +7,13 @@
 
     export let currentSectionContent: SectionContent;
 
-    const conn = createClient(supabaseUrl, supabaseKey);
+    // const conn = createClient(supabaseUrl, supabaseKey);
 
     onMount(async() => {
         // TODO: DB 모듈로 분리하기
-        const { data, error } = await conn
-        .from("TESTDB")
-        .select();
+        // const { data, error } = await conn
+        // .from("TESTDB")
+        // .select();
     });
 </script>
 
