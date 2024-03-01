@@ -13,25 +13,27 @@
     })
 
     const InitDays = (year: number, month: number) => {
+        // TODO: DB에서 데이터 얻어오기
         days = [
             {day: 1, content: ["a", "b", "c"]},
             {day: 2, content: ["d", "e", "f"]}
         ];
 
-        AddDays(year, month);
+        AddDaysOffset(year, month);
     }
 
-    const AddDays = (year: number, month: number) => {
+    const AddDaysOffset = (year: number, month: number) => {
         const date = new Date(year, month - 1, 1);
-        var day = date.getDay();
-        var contentLength = days.length;
+        const day = date.getDay();
+        const contentLength = days.length;
         for (let index = 0; index < day - 1; index++) {
             days.unshift({ day: 0, content: [] });
         }
-        const length = days.length;
-        for (let index = 0; index < 42 - length; index++) {
-            var z = new Date(year, month - 1, contentLength + index + 1);
-            if (z.getMonth() + 1 == month) {
+
+        const shiftedLength = days.length;
+        for (let index = 0; index < 42 - shiftedLength; index++) {
+            var targetDate = new Date(year, month - 1, contentLength + index + 1);
+            if (targetDate.getMonth() + 1 == month) {
                 days.push({ day: contentLength + index + 1, content:[] });
             }
         }
