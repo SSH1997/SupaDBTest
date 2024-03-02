@@ -2,7 +2,7 @@
 </script>
 
 <footer class="footer">
-    <p>footer</p>
+    <p>Erabareshi-Kodomotachi</p>
 </footer>
 
 <style>
@@ -13,7 +13,7 @@
         width: 100vw;
         height: 6vh;
 
-        background-color: gray;
+        background-color: whitesmoke;
 
         z-index: 1;
 
@@ -23,5 +23,7 @@
 
         padding: 1vh;
         box-sizing: border-box;
+
+        font-size: 2vh;
     }
 </style>

@@ -21,6 +21,8 @@
         font-size: 4vh;
         color: black;
 
+        background-color: transparent;
+
         display: flex;
         justify-content: center;
     }

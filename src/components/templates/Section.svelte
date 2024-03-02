@@ -18,7 +18,7 @@
 </script>
 
 <section class="section">
-    {#if currentSectionContent == SectionContent.a}
+    {#if currentSectionContent == SectionContent.Calendar}
         <Calendar />
     {/if}
 </section>
@@ -31,7 +31,7 @@
         height: 100vh;
         width: 100vw;
 
-        background-color: green;
+        background-color: white;
         
         z-index: 0;
         

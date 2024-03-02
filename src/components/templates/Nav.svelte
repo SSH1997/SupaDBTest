@@ -17,15 +17,8 @@
         height: 6vh;
         width: 100vw;
 
-        background-color: yellow;
+        background-color: cadetblue;
 
         z-index: 1;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        padding: 1vh;
-        box-sizing: border-box;
     }
 </style>

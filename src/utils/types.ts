@@ -1,10 +1,9 @@
 export enum SectionContent {
-  a,
-  b,
-  c,
+  Calendar,
+  Etc,
 }
 
 export type Day = {
-  date: number;
-  content: string[];
+  Date: number;
+  Content: string[];
 };

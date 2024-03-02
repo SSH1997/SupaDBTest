@@ -28,14 +28,14 @@
         const day = date.getDay();
         const contentLength = days.length;
         for (let index = 0; index < day - 1; index++) {
-            days.unshift({ date: 0, content: [] });
+            days.unshift({ Date: 0, Content: [] });
         }
 
         const shiftedLength = days.length;
         for (let index = 0; index < 42 - shiftedLength; index++) {
             var targetDate = new Date(year, month - 1, contentLength + index + 1);
             if (targetDate.getMonth() + 1 == month) {
-                days.push({ date: contentLength + index + 1, content:[] });
+                days.push({ Date: contentLength + index + 1, Content:[] });
             }
         }
 
@@ -67,6 +67,8 @@
             className = "today";
         }
 
+        console.log(className);
+
         return `dayHeader ${className}`;
     }
 </script>
@@ -96,13 +98,13 @@
         {#if days != null}
             {#each days as day, index}
                 <div class="day">
-                    <div class="{getDayClassName(index, day.date)}">
-                        {#if day.date != 0}
-                            {day.date}
+                    <div class="{getDayClassName(index, day.Date)}">
+                        {#if day.Date != 0}
+                            {day.Date}
                         {/if}
                     </div>
                     <div class="dayContent">
-                        {#each day.content as content}
+                        {#each day.Content as content}
                             <p>- {content}</p>
                         {/each}
                     </div>
@@ -115,7 +117,7 @@
 <style>
     .monthPicker {
         height: 5vh;
-        background-color: brown;
+        background-color: white;
         display: flex;
         justify-content: space-evenly;
     }
@@ -136,6 +138,8 @@
     .dayIndicator {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        background-color: lightgray;
+        text-align: center;
     }
 
     .days {
@@ -145,14 +149,14 @@
 
     .day {
         height: 10vh;
-        background-color: aqua;
+        background-color: white;
     }
 
     .dayHeader {
         height: 2vh;
-        background-color: violet;
-        border: 1px solid black;
+        border: 0.1px solid gray;
         font-size: 2vh;
+        text-align: end;
     }
 
     .saturday {
@@ -164,12 +168,13 @@
     }
 
     .today {
-        color: yellow;
+        color: cadetblue;
+        background-color: lightcyan;
     }
 
     .dayContent {
         height: 8vh;
-        border: 1px solid black;
+        border: 0.1px solid gray;
     }
 
     .dayContent p {

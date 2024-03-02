@@ -7,9 +7,10 @@
 
 <div class="nav_buttons_outer_div">
     <div class="nav_buttons_inner_div">
-        <Button buttonText={SectionContent[SectionContent.a]} onClick={() => setSectionContent(SectionContent.a)} />
-        <Button buttonText={SectionContent[SectionContent.b]} onClick={() => setSectionContent(SectionContent.b)} />
-        <Button buttonText={SectionContent[SectionContent.c]} onClick={() => setSectionContent(SectionContent.c)} />
+        <Button buttonText={SectionContent[SectionContent.Calendar]} onClick={() => setSectionContent(SectionContent.Calendar)} />
+    </div>
+    <div class="nav_buttons_inner_div">
+        <Button buttonText={SectionContent[SectionContent.Etc]} onClick={() => setSectionContent(SectionContent.Etc)} />
     </div>
 </div>
 
@@ -19,14 +20,12 @@
 
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
     .nav_buttons_inner_div {
-        width: 20%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        margin: 0.45vh 3vw;
+        background-color: aliceblue;
+        padding: 0.2vh 2vw;
+        border-radius: 10px;
     }
 </style>

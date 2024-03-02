@@ -5,7 +5,7 @@
 </script>
 
 <header class="header">
-    <p>Header</p>
+    <p>👾 Digivice 👾</p>
     <MenuButton {toggleNav} />
 </header>
 
@@ -17,7 +17,7 @@
         width: 100vw;
         height: 6vh;
         
-        background-color: gray;
+        background-color: color(srgb 0.3482 0.4661 0.3776);
 
         z-index: 1;
 
@@ -27,5 +27,7 @@
 
         padding: 1vh;
         box-sizing: border-box;
+
+        font-size: 4vh;
     }
 </style>

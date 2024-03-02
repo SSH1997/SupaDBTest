@@ -6,7 +6,7 @@
     import { SectionContent } from "@/utils/types";
 
     let isNavVisible: boolean = false;
-    let currentSectionContent: SectionContent = SectionContent.a;
+    let currentSectionContent: SectionContent = SectionContent.Calendar;
 
     const toggleNav = () => {
         isNavVisible = !isNavVisible;
