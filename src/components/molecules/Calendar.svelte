@@ -5,18 +5,19 @@
 
     let currentYear: number;
     let currentMonth: number;
+    let currentDate: Date;
     let days: Day[];
 
     onMount(() => {
-        const date = new Date();
-        InitDays(date.getFullYear(), date.getMonth() + 1);
+        currentDate = new Date();
+        InitDays(currentDate.getFullYear(), currentDate.getMonth() + 1);
     })
 
     const InitDays = (year: number, month: number) => {
         // TODO: DB에서 데이터 얻어오기
         days = [
-            {day: 1, content: ["a", "b", "c"]},
-            {day: 2, content: ["d", "e", "f"]}
+            // {date: 1, content: ["a", "b", "c"]},
+            // {date: 2, content: ["d", "e", "f"]}
         ];
 
         AddDaysOffset(year, month);
@@ -27,14 +28,14 @@
         const day = date.getDay();
         const contentLength = days.length;
         for (let index = 0; index < day - 1; index++) {
-            days.unshift({ day: 0, content: [] });
+            days.unshift({ date: 0, content: [] });
         }
 
         const shiftedLength = days.length;
         for (let index = 0; index < 42 - shiftedLength; index++) {
             var targetDate = new Date(year, month - 1, contentLength + index + 1);
             if (targetDate.getMonth() + 1 == month) {
-                days.push({ day: contentLength + index + 1, content:[] });
+                days.push({ date: contentLength + index + 1, content:[] });
             }
         }
 
@@ -51,6 +52,22 @@
         }
         
         InitDays(currentYear, currentMonth);
+    }
+
+    const getDayClassName = (index: number, date: number) => {
+        var className = "";
+
+        if (index % 7 == 6) {
+            className = "sunday";
+        } else if (index % 7 == 5) {
+            className = "saturday";
+        }
+
+        if (currentMonth == currentDate.getMonth() + 1 && currentYear == currentDate.getFullYear() && date == currentDate.getDate()) {
+            className = "today";
+        }
+
+        return `dayHeader ${className}`;
     }
 </script>
 
@@ -72,16 +89,16 @@
         <div class="dayHeader">수</div>
         <div class="dayHeader">목</div>
         <div class="dayHeader">금</div>
-        <div class="dayHeader">토</div>
-        <div class="dayHeader">일</div>
+        <div class="dayHeader saturday">토</div>
+        <div class="dayHeader sunday">일</div>
     </div>
     <div class="days">
         {#if days != null}
-            {#each days as day}
+            {#each days as day, index}
                 <div class="day">
-                    <div class="dayHeader">
-                        {#if day.day != 0}
-                            {day.day}
+                    <div class="{getDayClassName(index, day.date)}">
+                        {#if day.date != 0}
+                            {day.date}
                         {/if}
                     </div>
                     <div class="dayContent">
@@ -136,6 +153,18 @@
         background-color: violet;
         border: 1px solid black;
         font-size: 2vh;
+    }
+
+    .saturday {
+        color: blue;
+    }
+
+    .sunday {
+        color: red;
+    }
+
+    .today {
+        color: yellow;
     }
 
     .dayContent {

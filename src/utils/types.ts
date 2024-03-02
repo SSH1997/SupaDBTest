@@ -5,6 +5,6 @@ export enum SectionContent {
 }
 
 export type Day = {
-  day: number;
+  date: number;
   content: string[];
 };
