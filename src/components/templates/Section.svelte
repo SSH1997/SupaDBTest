@@ -3,9 +3,12 @@
     import { createClient } from "@supabase/supabase-js";
     import { SectionContent, type Day } from "@/utils/types";
     import { supabaseUrl, supabaseKey } from "@/utils/dbAuth";
+
+    import Login from "../molecules/Login.svelte";
     import Calendar from "../molecules/Calendar.svelte";
 
     export let currentSectionContent: SectionContent;
+    export let setSectionContent: (sectionContent: SectionContent) => void;
 
     // const conn = createClient(supabaseUrl, supabaseKey);
 
@@ -18,6 +21,9 @@
 </script>
 
 <section class="section">
+    {#if currentSectionContent == SectionContent.Login}
+        <Login {setSectionContent} />
+    {/if}
     {#if currentSectionContent == SectionContent.Calendar}
         <Calendar />
     {/if}
@@ -28,7 +34,6 @@
         position: absolute;
         top: 0;
 
-        height: 100vh;
         width: 100vw;
 
         background-color: white;

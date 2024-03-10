@@ -1,4 +1,5 @@
 export enum SectionContent {
+  Login,
   Calendar,
   Etc,
 }

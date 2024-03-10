@@ -6,7 +6,7 @@
     import { SectionContent } from "@/utils/types";
 
     let isNavVisible: boolean = false;
-    let currentSectionContent: SectionContent = SectionContent.Calendar;
+    let currentSectionContent: SectionContent = SectionContent.Login;
 
     const toggleNav = () => {
         isNavVisible = !isNavVisible;
@@ -24,6 +24,6 @@
     {#if isNavVisible}
         <Nav {setSectionContent} />
     {/if}
-    <Section {currentSectionContent} />
+    <Section {currentSectionContent} {setSectionContent} />
     <Footer />
 </div>

@@ -11,7 +11,7 @@
     onMount(() => {
         currentDate = new Date();
         InitDays(currentDate.getFullYear(), currentDate.getMonth() + 1);
-    })
+    });
 
     const InitDays = (year: number, month: number) => {
         // TODO: DB에서 데이터 얻어오기
@@ -66,8 +66,6 @@
         if (currentMonth == currentDate.getMonth() + 1 && currentYear == currentDate.getFullYear() && date == currentDate.getDate()) {
             className = "today";
         }
-
-        console.log(className);
 
         return `dayHeader ${className}`;
     }
