@@ -34,6 +34,14 @@
 
     const submitPassCode = () => {
         if (totalPassCode == "AABCCD" || totalPassCode == "BCDABC") {
+            var date = new Date();
+            var hour = date.getHours();
+            var storedPassCode = localStorage.getItem("DigivicePassedHour");
+
+            if (storedPassCode == null || Number.parseInt(storedPassCode) != hour) {
+                localStorage.setItem("DigivicePassedHour", hour.toString());   
+            }
+
             setSectionContent(SectionContent.Calendar);
         } else {
             alert("비밀번호가 틀렸습니다!");
@@ -67,12 +75,12 @@
     .digivice_background {
         position: absolute;
         width: 100vw;
-        top: 15vh;
+        top: 22vh;
     }
 
     .passcode_zone {
         position: absolute;
-        top: calc(15vh + 8vw);
+        top: calc(22vh + 8vw);
         
         width: 100vw;
         height: 59vw;

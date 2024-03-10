@@ -1,13 +1,23 @@
 <script lang="ts">
-    import Login from "@/components/molecules/Login.svelte";
-import Footer from "@/components/templates/Footer.svelte";
+    import Footer from "@/components/templates/Footer.svelte";
     import Header from "@/components/templates/Header.svelte";
     import Nav from "@/components/templates/Nav.svelte";
     import Section from "@/components/templates/Section.svelte";
     import { SectionContent } from "@/utils/types";
+    import { onMount } from "svelte";
 
     let isNavVisible: boolean = false;
     let currentSectionContent: SectionContent = SectionContent.Login;
+
+    onMount(() => {
+        var date = new Date();
+        var hour = date.getHours();
+        var passedHour = localStorage.getItem("DigivicePassedHour");
+        
+        if (passedHour != null && Number.parseInt(passedHour) == hour) {
+            currentSectionContent = SectionContent.Calendar;
+        }
+    });
 
     const toggleNav = () => {
         isNavVisible = !isNavVisible;
@@ -28,9 +38,15 @@ import Footer from "@/components/templates/Footer.svelte";
         {#if isNavVisible}
             <Nav {setSectionContent} />
         {/if}
-        
+
         <Footer />
     {/if}
 
     <Section {currentSectionContent} {setSectionContent} />
 </div>
+
+<style>
+    * {
+        touch-action: manipulation;
+    }
+</style>
