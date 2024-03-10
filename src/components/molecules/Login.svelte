@@ -66,7 +66,6 @@
 <style>
     .digivice_background {
         position: absolute;
-        background-color: aqua;
         width: 100vw;
         top: 15vh;
     }
