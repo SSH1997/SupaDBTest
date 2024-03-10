@@ -33,7 +33,7 @@
     }
 
     const submitPassCode = () => {
-        if (totalPassCode == "AABCCD") {
+        if (totalPassCode == "AABCCD" || totalPassCode == "BCDABC") {
             setSectionContent(SectionContent.Calendar);
         } else {
             alert("비밀번호가 틀렸습니다!");
